@@ -94,7 +94,7 @@ Handle<Value> convert_blob(const Arguments& args) {
     //convert
     block b = AUTO_VAL_INIT(b);
     if (!parse_and_validate_block_from_blob(input, b))
-        return except("Failed to parse block");
+        return except("Failed to parse block 97");
 
     if (b.major_version < BLOCK_MAJOR_VERSION_2) {
         if (!get_block_hashing_blob(b, output))
@@ -128,7 +128,7 @@ Handle<Value> get_block_id(const Arguments& args) {
 
     block b = AUTO_VAL_INIT(b);
     if (!parse_and_validate_block_from_blob(input, b))
-        return except("Failed to parse block");
+        return except("Failed to parse block 131");
 
     crypto::hash block_id;
     if (!get_block_hash(b, block_id))
@@ -160,7 +160,7 @@ Handle<Value> construct_block_blob(const Arguments& args) {
 
     block b = AUTO_VAL_INIT(b);
     if (!parse_and_validate_block_from_blob(block_template_blob, b))
-        return except("Failed to parse block");
+        return except("Failed to parse block 163");
 
     b.nonce = nonce;
     if (b.major_version == BLOCK_MAJOR_VERSION_2) {
@@ -206,7 +206,7 @@ Handle<Value> convert_blob_bb(const Arguments& args) {
     //convert
     bb_block b = AUTO_VAL_INIT(b);
     if (!parse_and_validate_block_from_blob(input, b)) {
-        return except("Failed to parse block");
+        return except("Failed to parse block 209");
     }
     output = get_block_hashing_blob(b);
 
