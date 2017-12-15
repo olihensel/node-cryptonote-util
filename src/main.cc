@@ -246,8 +246,8 @@ Handle<Value> address_decode(const Arguments& args) {
 
 void init(Handle<Object> exports) {
 
-    log_space::get_set_log_detalisation_level(true, LOG_LEVEL_2);
-    log_space::log_singletone::add_logger(LOGGER_CONSOLE, NULL, NULL);
+    epee::log_space::get_set_log_detalisation_level(true, LOG_LEVEL_2);
+    epee::log_space::log_singletone::add_logger(LOGGER_CONSOLE, NULL, NULL);
    
     exports->Set(String::NewSymbol("construct_block_blob"), FunctionTemplate::New(construct_block_blob)->GetFunction());
     exports->Set(String::NewSymbol("get_block_id"), FunctionTemplate::New(get_block_id)->GetFunction());
