@@ -12,6 +12,7 @@
 #include "crypto/hash.h"
 #include "common/base58.h"
 #include "serialization/binary_utils.h"
+#include "include_base_utils.h"
 
 using namespace node;
 using namespace v8;
