@@ -851,8 +851,8 @@ namespace cryptonote
   //---------------------------------------------------------------
   bool check_proof_of_work_v1(const block& bl, difficulty_type current_diffic, crypto::hash& proof_of_work)
   {
-    if (BLOCK_MAJOR_VERSION_1 != bl.major_version && BLOCK_MAJOR_VERSION_2 != bl.major_version)
-      return false;
+    //if (BLOCK_MAJOR_VERSION_1 != bl.major_version && BLOCK_MAJOR_VERSION_2 != bl.major_version)
+    //  return false;
 
     proof_of_work = get_block_longhash(bl, 0);
     return check_hash(proof_of_work, current_diffic);
@@ -860,8 +860,8 @@ namespace cryptonote
   //---------------------------------------------------------------
   bool check_proof_of_work_v2(const block& bl, difficulty_type current_diffic, crypto::hash& proof_of_work)
   {
-    if (BLOCK_MAJOR_VERSION_2 != bl.major_version && BLOCK_MAJOR_VERSION_3 != bl.major_version)
-      return false;
+    //if (BLOCK_MAJOR_VERSION_2 != bl.major_version && BLOCK_MAJOR_VERSION_3 != bl.major_version)
+    //  return false;
 
     if (!get_bytecoin_block_longhash(bl, proof_of_work))
       return false;
